@@ -1,0 +1,16 @@
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  annotations:
+    autoscaling.knative.dev/minScale: "1"
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+  name: spring-petclinic-rest
+  namespace: default
+spec:
+  source:
+    git:
+      ref:
+        branch: master
+      url: https://github.com/tfynes-pivotal/spring-petclinic-rest
